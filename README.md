@@ -15,11 +15,14 @@ IdentityServer has a number of jobs and features — including:
 ** Manage and authenticate clients
 ** Issue identity and access tokens to clients
 ** validate tokens
-### Overall Picture
+
+## Overall Picture
 
 In this repository, you will see that how to secure microservices with using Identity Server and backing with **API Gateway**.
 We’re going to protect our Web and API applications with using **OAuth 2 and OpenID Connect** in IdentityServer. Securing
 your web application and API with tokens, working with claims, authentication and authorization middlewares and applying policies, and so on.
+
+![Overall Picture of Repository](https://user-images.githubusercontent.com/1147445/97865027-991b7200-1d1a-11eb-927e-3f5580a7f5b5.png)
 
 ### Client
 A client is a piece of software that requests tokens from your IdentityServer - either for authenticating a user (requesting an identity token) 
@@ -61,7 +64,7 @@ APIs APIs resources represent functionality a client wants to invoke - typically
 First of all, we are going to develop **APISample** project and protect this API resources with **IdentityServer4 OAuth 2.0 implementation**. 
 Generate **JWT Token** with client_credentials from IdentityServer4 and will use this token for securing APISample protected resources.
 
-## Installation
+# Installation
 Follow these steps to get your development environment set up:
 1. Check All projects run profiles. One by one Right Click the project file, open Properties window and check the debug section. Launch Profile should
 be the "Project" and App URLs should be the same as big picture.
@@ -87,23 +90,23 @@ Basically, we can think of our structure as client applications (web, native, mo
 You can see these system into image.
 
 
-# Client Applications
+## Client Applications
 Client Applications are applications that want to access secure data sources (Web Api) that users use. A client must be first registered with IdentityServer before it can request tokens.
 Examples for clients are web applications, native mobile or desktop applications, SPAs, server processes etc.
 
-# Resources
+## Resources
 Data Resources are the data we want to be protected by IdentityServer. Data sources must have a unique name and the client that will use this resource must access the resource with this name.
 
-#IdentityServer
+##IdentityServer
 IdentityServer that we can say OpenId Connect provider over the OAuth2 and OpenId protocols. In short, it provides security tokens to client applications. IdentityServer protects data sources, ensures authentication of users, provides single sign-on and session management, verifies client applications, provides identity and access tokens to client applications and checks the authenticity of these tokens.
 
-#Identity Token
+##Identity Token
 Identity Token represents to the result of the authentication process. It contains a sub-identifier for the user and information about how and when the user will be authenticated. It also contains identity information.
 
-#Access Token
+##Access Token
 Access Token provides access to the data source (API). The client application can access the data by sending a request to the data source with this token. Access token contains client and user information. The API uses this information to authorize and allow access to data.
 
-#Identity Server  in Microservices World
+##Identity Server  in Microservices World
 The security of the application we have developed that the protection and management of the data used by the application are very important. With the developing technology, the access of applications or devices in different technologies to our data may have some security and software problems or additional loads for us.
 
 For example, let’s assume that the users of a SPA (Single Page App) Client application that will use a Web API we have developed log into the system with their username and password. Then, when another client web application to our same Web API wants to verify with windows authentication and enter, a native mobile client application wants to access or another web API wants to access the Web API that we have developed, the security supported by each client application technology, we may need to develop or configure the security part of our application.
