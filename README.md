@@ -22,7 +22,7 @@ In this repository, you will see that how to secure microservices with using Ide
 We’re going to protect our Web and API applications with using **OAuth 2 and OpenID Connect** in IdentityServer. Securing
 your web application and API with tokens, working with claims, authentication and authorization middlewares and applying policies, and so on.
 
-![Overall Picture of Repository](https://user-images.githubusercontent.com/1147445/97865027-991b7200-1d1a-11eb-927e-3f5580a7f5b5.png)
+![Overall Picture of Repository](https://miro.medium.com/max/720/1*OFCAw0ubmlYmiH6-N5qSLg.png)
 
 ### Client
 A client is a piece of software that requests tokens from your IdentityServer - either for authenticating a user (requesting an identity token) 
