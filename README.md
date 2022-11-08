@@ -1,4 +1,20 @@
-# IdentityServerAspNetIdentity
+# IdentityServer
+## What is Identity Server ?
+Identity Server4 is an open source framework which implements OpenId Connect and OAuth2 protocols for .Net Core.
+With IdentityServer, we can provide authentication and access control for our web applications or Web APIs from a single point between applications or on a user basis.
+IdentityServer determines how is your web or native client applications that want to access Web Api or Api (Resource) in corporate applications or modern web applications can be accessed using authentication and authorization. So for this operations, there is no need to write identification specific to the client application on the Web API side.
+
+You can call this centralized security system as a security token service, identity provider, authorization server, IP-STS and more.
+As a summary IdentityServer4 provides that issues security tokens to clients.
+
+IdentityServer has a number of jobs and features — including:
+
+** Protect your resources
+** Authenticate users using a local account store or via an external identity provider
+** Provide session management and single sign-on
+** Manage and authenticate clients
+** Issue identity and access tokens to clients
+** validate tokens
 ### Overall Picture
 
 In this repository, you will see that how to secure microservices with using Identity Server and backing with **API Gateway**.
@@ -64,22 +80,7 @@ Check the application with logging the system with below credentials;
 
 
 Further Reading 
-# What is Identity Server ?
-Identity Server4 is an open source framework which implements OpenId Connect and OAuth2 protocols for .Net Core.
-With IdentityServer, we can provide authentication and access control for our web applications or Web APIs from a single point between applications or on a user basis.
-IdentityServer determines how is your web or native client applications that want to access Web Api or Api (Resource) in corporate applications or modern web applications can be accessed using authentication and authorization. So for this operations, there is no need to write identification specific to the client application on the Web API side.
 
-You can call this centralized security system as a security token service, identity provider, authorization server, IP-STS and more.
-As a summary IdentityServer4 provides that issues security tokens to clients.
-
-IdentityServer has a number of jobs and features — including:
-
-** Protect your resources
-** Authenticate users using a local account store or via an external identity provider
-** Provide session management and single sign-on
-** Manage and authenticate clients
-** Issue identity and access tokens to clients
-** validate tokens
 
 # Identity Server  Terminologies
 Basically, we can think of our structure as client applications (web, native, mobile), data source applications (web api, service) and IdentityServer application. 
