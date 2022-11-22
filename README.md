@@ -1,11 +1,11 @@
 # IdentityServer
 ## What is Identity Server ?
-Identity Server4 is an open source framework which implements OpenId Connect and OAuth2 protocols for .Net Core.
+Identity Server is an open source framework which implements OpenId Connect and OAuth2 protocols for .Net Core.
 With IdentityServer, we can provide authentication and access control for our web applications or Web APIs from a single point between applications or on a user basis.
 IdentityServer determines how is your web or native client applications that want to access Web Api or Api (Resource) in corporate applications or modern web applications can be accessed using authentication and authorization. So for this operations, there is no need to write identification specific to the client application on the Web API side.
 
 You can call this centralized security system as a security token service, identity provider, authorization server, IP-STS and more.
-As a summary IdentityServer4 provides that issues security tokens to clients.
+As a summary IdentityServer provides that issues security tokens to clients.
 
 IdentityServer has a number of jobs and features — including:
 
@@ -22,7 +22,7 @@ In this repository, you will see that how to secure microservices with using Ide
 We’re going to protect our Web and API applications with using **OAuth 2 and OpenID Connect** in IdentityServer. Securing
 your web application and API with tokens, working with claims, authentication and authorization middlewares and applying policies, and so on.
 
-![Overall Picture of Repository](https://miro.medium.com/max/720/1*OFCAw0ubmlYmiH6-N5qSLg.png)
+![Overall Picture of Repository](https://camo.githubusercontent.com/7813bfb071863cb7c64a7d7709f98a8e2d60e9ba10e0bb746d222deabf36cbed/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f3732302f312a4f464341773075626d6c596d6948362d4e3571534c672e706e67)
 
 ### Client
 A client is a piece of software that requests tokens from your IdentityServer - either for authenticating a user (requesting an identity token) 
@@ -35,7 +35,7 @@ This is the most common type of client scenario: web applications, SPAs or nativ
 a browser for user interaction (e.g. for authentication or consent)
 
 After that, we are going to develop WebClientSample Asp.Net project for Interactive Client of our application. This Interactive WebClientSample Client
-application will be secured with OpenID Connect in IdentityServer4. Our client application pass credentials with logging to an Identity Server
+application will be secured with OpenID Connect in IdentityServer. Our client application pass credentials with logging to an Identity Server
 and receive back a JSON Web Token (JWT).
 
 * ** Client Applications (Machine to Machine Communication)
@@ -46,9 +46,9 @@ Client Applications are console applications that want to access secure data sou
 Examples for clients are web applications, native mobile or desktop applications, SPAs, server processes etc.
 
 ### Identity Server
-Also, we are going to develop centralized standalone **Authentication Server** and **Identity Provider** with implementing IdentityServer4 package
+Also, we are going to develop centralized standalone **Authentication Server** and **Identity Provider** with implementing IdentityServer package
 and the name of microservice is Identity Server.
-Identity Server4 is an open source framework which implements **OpenId Connect and OAuth2 protocols** for .Net Core.
+Identity Server is an open source framework which implements **OpenId Connect and OAuth2 protocols** for .Net Core.
 With Identity Server, we can provide authentication and access control for our web applications or Web APIs from a single point between applications
 or on a user basis.
 
@@ -62,8 +62,8 @@ Every resource has a unique name - and clients use this name to specify to which
  * **APIs APIs resources represent functionality a client wants to invoke - typically modelled as Web APIs, but not necessarily.
 
 #### APISample
-First of all, we are going to develop **APISample** project and protect this API resources with **IdentityServer4 OAuth 2.0 implementation**. 
-Generate **JWT Token** with client_credentials from IdentityServer4 and will use this token for securing APISample protected resources.
+First of all, we are going to develop **APISample** project and protect this API resources with **IdentityServer OAuth 2.0 implementation**. 
+Generate **JWT Token** with client_credentials from IdentityServer and will use this token for securing APISample protected resources.
 
 # Installation
 Follow these steps to get your development environment set up:
@@ -75,11 +75,13 @@ be the "Project" and App URLs should be the same as big picture.
 You will see 4 project console window and 1 chrome window for client application.
 
 * **WebClientSample -> https://localhost:5002/**
+* **IdentityServer -> https://localhost:5001/**
+* **APISample -> https://localhost:6001/**
 
 Check the application with logging the system with below credentials;
 
-* **username - password 1 : alice - a1**
-* **username - password 2 : bob - b1**
+* **username - password 1 : payman - Pass123$
+* **username - password 2 : testtestuser - Pass123$
 
 
 Further Reading 
