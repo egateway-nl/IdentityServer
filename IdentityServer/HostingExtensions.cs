@@ -14,12 +14,12 @@ internal static class HostingExtensions
     {
         builder.Services.AddRazorPages();
 
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+        // For changing to Sqlite also add UseSqlite library 
+        //builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
         // For changing to SQLServer also add sql library 
-        // builder.Services.AddDbContextPool<DataSpacePORContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("DataContext")))
+        builder.Services.AddDbContextPool<ApplicationDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
         builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -41,27 +41,34 @@ internal static class HostingExtensions
             .AddInMemoryApiScopes(Config.ApiScopes)
             .AddInMemoryClients(Config.Clients)
             .AddAspNetIdentity<ApplicationUser>()
-            .AddProfileService<CustomProfileService>();
-        //.AddProfileService<CustomProfileService>();
+            .AddProfileService<CustomProfileService>()
+            .AddDeveloperSigningCredential();
+
+        //builder.Services.AddTransient<IClaimsTransformation, MyClaimsTransformation>();
 
         builder.Services.AddAuthentication()
-            .AddGoogle(options =>
-            {
-                options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-
-                // register your IdentityServer with Google at https://console.developers.google.com
-                // enable the Google+ API
-                // set the redirect URI to https://localhost:5001/signin-google
-                options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-                options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
-            })
             .AddFacebook("Facebook", options =>
             {
                 options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
 
                 options.ClientId = builder.Configuration["Authentication:Facebook:ClientId"];
                 options.ClientSecret = builder.Configuration["Authentication:Facebook:ClientSecret"];
-            });
+            })
+            //.AddGoogle(options =>
+            //{
+            //    //.AddCookie("YourCustomScheme")
+            //    //    .AddGoogle("Google", options =>
+            //    //    {
+            //    //        options.SignInScheme = "YourCustomScheme";
+            //    options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+
+            //    // register your IdentityServer with Google at https://console.developers.google.com
+            //    // enable the Google+ API
+            //    // set the redirect URI to https://localhost:5001/signin-google
+            //    options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+            //    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+            //})
+            ;
         //payman remove Demo IdentityServer
         //.AddOpenIdConnect("oidc", "Demo IdentityServer", options =>
         //{

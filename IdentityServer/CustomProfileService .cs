@@ -5,7 +5,6 @@ using Duende.IdentityServer.AspNetIdentity;
 using Duende.IdentityServer.Models;
 using IdentityServerHost.Models;
 using Microsoft.AspNetCore.Identity;
-using System.Security.Claims;
 
 namespace IdentityServer;
 
@@ -19,12 +18,17 @@ public class CustomProfileService : ProfileService<ApplicationUser>
 	protected override async Task GetProfileDataAsync(ProfileDataRequestContext context, ApplicationUser user)
 	{
 		var principal = await GetUserClaimsAsync(user);
-		var id = (ClaimsIdentity)principal.Identity;
-		if (!string.IsNullOrEmpty(user.Driver))
-		{
-			id.AddClaim(new Claim("driver", user.Driver));
-		}
+		//var id = (ClaimsIdentity)principal.Identity;
+		//if (!string.IsNullOrEmpty(user.Driver))
+		//{
+		//	id.AddClaim(new Claim("driver", user.Driver));
+		//}
 
 		context.AddRequestedClaims(principal.Claims);
+
+		context.IssuedClaims.Add(new System.Security.Claims.Claim("Username", user.UserName));
+
+		// Temp
+		context.IssuedClaims.Add(new System.Security.Claims.Claim("UserId", user.Id));
 	}
 }

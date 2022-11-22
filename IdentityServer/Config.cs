@@ -10,7 +10,9 @@ public static class Config
         {
             new IdentityResources.OpenId(),
             new IdentityResources.Profile(),
-            new IdentityResource("driver", new [] { "valid_driver" })
+            //new IdentityResource("driver", new [] { "valid_driver" }),
+            new IdentityResource("myDriver", new [] {"myDriverClaim"}),
+
         };
 
     public static IEnumerable<ApiScope> ApiScopes =>
@@ -54,7 +56,8 @@ public static class Config
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
                     "api1",
-                    "driver"
+                    //"driver",
+                    "myDriver"
                 }
             }
         };

@@ -1,0 +1,26 @@
+﻿@page
+@model WebClientSample.Pages.ManageUser.ChangeDriverModel
+@{
+}
+
+<form asp-page="/ManageUser/ChangeDriver">
+	@*<div class="form-group">
+		<label>Users</label>
+		<select class="form-control">
+			<option>Select Something</option>
+			@foreach (var item in Model.Users ?? new List<WebClientSample.Model.User>())
+			{
+				<option value="@item.Id">@item.UserName</option>
+			}
+		</select>
+	</div>
+*@
+	<div class="form-group">
+		<input type="hidden" name="UserId" asp-for="@Model.UserId" />
+		<label asp-for="@Model.DriverName"></label>
+		<input type="text" class="form-control" placeholder="Driver Name" asp-for="@Model.DriverName" />
+	</div>
+
+	<button class="btn btn-primary" name="Save">Save</button>
+
+</form>

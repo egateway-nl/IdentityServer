@@ -1,8 +1,10 @@
-﻿using System.Text.Json;
-using IdentityModel.Client;
+﻿using IdentityModel.Client;
+using System.Text.Json;
 
 // discover endpoints from metadata
 var client = new HttpClient();
+Console.ReadLine();
+
 var disco = await client.GetDiscoveryDocumentAsync("https://localhost:5001");
 if (disco.IsError)
 {
@@ -48,3 +50,4 @@ else
 
     Console.WriteLine(formatted);
 }
+Console.ReadLine();
