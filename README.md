@@ -1,8 +1,9 @@
 # IdentityServer
 ## What is Identity Server ?
-Identity Server is an open source framework which implements OpenId Connect and OAuth2 protocols for .Net Core.
+Identity Server is an open source framework which implements OpenId Connect and OAuth2 protocols.
 With IdentityServer, we can provide authentication and access control for our web applications or Web APIs from a single point between applications or on a user basis.
-IdentityServer determines how is your web or native client applications that want to access Web Api or Api (Resource) in corporate applications or modern web applications can be accessed using authentication and authorization. So for this operations, there is no need to write identification specific to the client application on the Web API side.
+IdentityServer determines how is your web or native client applications that want to access Web Api or Api (Resource) in corporate applications or modern web applications can be accessed using authentication and authorization.
+So for this operations, there is no need to write identification specific to the client application on the Web API side.
 
 You can call this centralized security system as a security token service, identity provider, authorization server, IP-STS and more.
 As a summary IdentityServer provides that issues security tokens to clients.
@@ -19,8 +20,8 @@ IdentityServer has a number of jobs and features — including:
 ## Overall Picture
 
 In this repository, you will see that how to secure microservices with using Identity Server and backing with **API Gateway**.
-We’re going to protect our Web and API applications with using **OAuth 2 and OpenID Connect** in IdentityServer. Securing
-your web application and API with tokens, working with claims, authentication and authorization middlewares and applying policies, and so on.
+We’re going to protect our Web and API applications with using **OAuth 2 and OpenID Connect** in IdentityServer.
+Securing your web application and API with tokens, working with claims, authentication and authorization middlewares and applying policies, and so on.
 
 ![Overall Picture of Repository](/IdentityServer/wwwroot/idpflow.jpg)
 
@@ -47,8 +48,8 @@ Examples for clients are web applications, native mobile or desktop applications
 
 ### Identity Server
 Also, we are going to develop centralized standalone **Authentication Server** and **Identity Provider** with implementing IdentityServer package
-and the name of microservice is Identity Server.
-Identity Server is an open source framework which implements **OpenId Connect and OAuth2 protocols** for .Net Core.
+and the name of microservice is Identity Server. It is based a customization of an open source Duende Identity server.
+Identity Server is an open source framework which implements **OpenId Connect and OAuth2 protocols**.
 With Identity Server, we can provide authentication and access control for our web applications or Web APIs from a single point between applications
 or on a user basis.
 
@@ -84,7 +85,7 @@ Check the application with logging the system with below credentials;
 * **username - password 2 : testtestuser - Pass123$
 
 
-Further Reading 
+# Further Reading 
 
 # Identity Server  Terminologies
 Basically, we can think of our structure as client applications (web, native, mobile), data source applications (web api, service) and IdentityServer application. 
