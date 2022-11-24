@@ -1,5 +1,24 @@
 ﻿@page
 @model MyApp.Namespace.CallApiModel
 
-@*<input  onclick="ClickGet" />*@
+
+
+
+<form method="post">
+    <table>
+        <tr>
+            <td><input type="submit" id="btnFetch" value="Fetch" asp-page-handler="Fetch" /></td>
+           
+        </tr>
+    </table>
+</form>
 <pre>@Model.Json</pre>
+
+@if (ViewData["Message"] != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert('@ViewData["Message"]');
+            };
+        </script>
+    }

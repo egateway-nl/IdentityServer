@@ -12,6 +12,20 @@ namespace MyApp.Namespace
 
         public async Task OnGet()
         {
+            //var accessToken = await HttpContext.GetTokenAsync("access_token");
+            //var client = new HttpClient();
+            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            //var content = await client.GetStringAsync("https://localhost:6001/identity");
+
+            //var parsed = JsonDocument.Parse(content);
+            //var formatted = JsonSerializer.Serialize(parsed, new JsonSerializerOptions { WriteIndented = true });
+
+            //Json = formatted;
+        }
+
+        public async Task OnPostFetch()
+        {
+
             var accessToken = await HttpContext.GetTokenAsync("access_token");
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
@@ -21,19 +35,11 @@ namespace MyApp.Namespace
             var formatted = JsonSerializer.Serialize(parsed, new JsonSerializerOptions { WriteIndented = true });
 
             Json = formatted;
+            ViewData["Message"] = "You fetched data from API (https://localhost:6001)!";
         }
 
-        //public async Task ClickGet()
-        //{
-        //    var accessToken = await HttpContext.GetTokenAsync("access_token");
-        //    var client = new HttpClient();
-        //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-        //    var content = await client.GetStringAsync("https://localhost:6001/identity");
 
-        //    var parsed = JsonDocument.Parse(content);
-        //    var formatted = JsonSerializer.Serialize(parsed, new JsonSerializerOptions { WriteIndented = true });
 
-        //    Json = formatted;
-        //}
+
     }
 }

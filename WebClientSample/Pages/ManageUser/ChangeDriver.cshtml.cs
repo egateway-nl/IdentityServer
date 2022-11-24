@@ -67,7 +67,8 @@ namespace WebClientSample.Pages.ManageUser
             }
 
             // something went wrong, show form with error
-            return Page();
+            //return Page();
+            return RedirectToPage("/Index");
         }
 
 

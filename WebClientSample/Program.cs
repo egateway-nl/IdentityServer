@@ -50,34 +50,34 @@ builder.Services.AddAuthentication(options =>
 
 		options.Events = new OpenIdConnectEvents
 		{
-			OnTicketReceived = context =>
-			{
-				return Task.CompletedTask;
-			},
-			OnTokenValidated = context =>
-			{
-				return Task.CompletedTask;
-			},
-			OnMessageReceived = context =>
-			{
-				return Task.CompletedTask;
-			},
-			OnUserInformationReceived = context =>
-			{
-				return Task.CompletedTask;
-			},
-			OnAuthorizationCodeReceived = context =>
-			{
-				return Task.CompletedTask;
-			},
-			OnTokenResponseReceived = context =>
-			{
-				return Task.CompletedTask;
-			},
-			OnRemoteFailure = context =>
-			{
-				return Task.CompletedTask;
-			},
+			//OnTicketReceived = context =>
+			//{
+			//	return Task.CompletedTask;
+			//},
+			//OnTokenValidated = context =>
+			//{
+			//	return Task.CompletedTask;
+			//},
+			//OnMessageReceived = context =>
+			//{
+			//	return Task.CompletedTask;
+			//},
+			//OnUserInformationReceived = context =>
+			//{
+			//	return Task.CompletedTask;
+			//},
+			//OnAuthorizationCodeReceived = context =>
+			//{
+			//	return Task.CompletedTask;
+			//},
+			//OnTokenResponseReceived = context =>
+			//{
+			//	return Task.CompletedTask;
+			//},
+			//OnRemoteFailure = context =>
+			//{
+			//	return Task.CompletedTask;
+			//},
 		};
 
 	});
